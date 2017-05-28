@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+    <script>
+    var socket = io('http://localhost:8080');
+
+    function action(action) {
+        socket.emit('videoEvent', {
+            event: action
+        });
+    }
+
+    function moveTo(total) {
+        socket.emit('videoEvent', {
+            event: 'time',
+            time: total
+        });
+    }
+    </script>
+</head>
+
+<body>
+    <button onclick="action('play')">play</button>
+    <button onclick="action('pause')">pause</button>
+    <button onclick="moveTo(-10)">-10s</button>
+    <button onclick="moveTo(10)">+10s</button>
+</body>
+
+</html>
