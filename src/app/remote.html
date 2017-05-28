@@ -6,13 +6,13 @@
     var socket = io('http://localhost:8080');
 
     function action(action) {
-        socket.emit('videoEvent', {
+        socket.emit('', {
             event: action
         });
     }
 
     function moveTo(total) {
-        socket.emit('videoEvent', {
+        socket.emit('', {
             event: 'time',
             time: total
         });

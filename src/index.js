@@ -11,9 +11,8 @@ app.get('/remote', function(req, res){
 });
 
 io.on('connection', function(socket) {
-    socket.on('videoEvent', function (data) {
-    	data.id = socket.id;
-        socket.broadcast.emit('videoUpdate', data);
+    socket.on('', function (data) {
+        //socket.
     });
 });
 
